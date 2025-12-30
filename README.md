@@ -1,0 +1,13 @@
+- `auto_regressive_mnist.ipynb`
+    - Contains code for training an autoregressive generative model on the MNIST dataset
+    - Uses **FVSBN (Fully Visible Sigmoid Belief Network)**
+        - Simple pixel-wise autoregressive model
+        - Pixel `i` depends on all previous pixels in a fixed ordering
+        - Separate model is trained for each pixel
+        - No parameter sharing across pixels
+        - Performs well when training data contains only a single digit
+        - Fails when trained on multiple digits
+            - Learns a shortcut by modeling only one dominant digit
+            - Maximizes likelihood / minimizes negative log-likelihood without capturing full data diversity
+        - Suffers from parameter explosion due to lack of parameter sharing
+        - Requires a strict ordering of pixels
