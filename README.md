@@ -6,8 +6,10 @@
         - Separate model is trained for each pixel
         - No parameter sharing across pixels
         - Performs well when training data contains only a single digit
-        - Fails when trained on multiple digits
+        - Poor performance when trained on multiple digits
             - Learns a shortcut by modeling only one dominant digit
             - Maximizes likelihood / minimizes negative log-likelihood without capturing full data diversity
+            - Reducing the number of datapoints from each class and having same number of train data. 
+            - EX: Using 2000 samples from classes `7` and `0`  in training set we get about 4 images of 7 out of 30 images generated during evaluation.
         - Suffers from parameter explosion due to lack of parameter sharing
         - Requires a strict ordering of pixels
