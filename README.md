@@ -1,6 +1,9 @@
 - `auto_regressive_mnist.ipynb`
     - Contains code for training an autoregressive generative model on the MNIST dataset
-    - Uses **FVSBN (Fully Visible Sigmoid Belief Network)**
+    - **FVSBN (Fully Visible Sigmoid Belief Network)** 
+        - Simple logistic regression (Perceptron with sigmoid activation - no hidden layers)
+        - Performance was sub par
+    - **NADE (Without weights sharing)**
         - Simple pixel-wise autoregressive model
         - Pixel `i` depends on all previous pixels in a fixed ordering
         - Separate model is trained for each pixel
