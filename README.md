@@ -16,3 +16,8 @@
             - EX: Using 2000 samples from classes `7` and `0`  in training set we get about 4 images of 7 out of 30 images generated during evaluation.
         - Suffers from parameter explosion due to lack of parameter sharing
         - Requires a strict ordering of pixels
+        - Training takes about 50 mins.
+    - **NADE (With parameter sharing between input and hidden layers)**
+        - The input-hidden weights are shared and the hidden ouput of next pixel is computed increemently to reduce time and function calls.
+        - Here we forward pass and obtain pixels values for all pixel positions and loss is computed for the entire image for entire batch as opposed to previous case where loss was computed for every pixels for a batch.
+        - Total training time <= 20 mins
