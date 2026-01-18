@@ -21,3 +21,11 @@
         - The input-hidden weights are shared and the hidden ouput of next pixel is computed increemently to reduce time and function calls.
         - Here we forward pass and obtain pixels values for all pixel positions and loss is computed for the entire image for entire batch as opposed to previous case where loss was computed for every pixels for a batch.
         - Total training time <= 20 mins
+
+- `VAE.ipynb`
+    - **VAE (Variational Auto Encoder)**
+        - https://www.ibm.com/think/topics/variational-autoencoder
+        - Training with continuous images (pixel values in [0, 1])
+            - All generated images were like 3 when beta (KLD Loss coeff) = 1
+            - When beta = 0.01 => better performance
+        - Training with binary images also gave similar results ( inference without rounding)
